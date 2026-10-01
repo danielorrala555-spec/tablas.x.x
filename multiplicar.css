@@ -11,75 +11,292 @@ body {
     justify-content: center;
     align-items: center;
 
-    font-family: Arial, sans-serif;
+    padding: 30px;
 
-    background: #20243a;
+    /*
+        Reemplaza "fondo.gif" por el nombre
+        exacto de tu GIF.
+    */
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.10),
+            rgba(0, 0, 0, 0.10)
+        ),
+        url("Connection.gif");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: "Roboto", sans-serif;
 }
 
-.contenedor {
-    width: 90%;
-    max-width: 500px;
+.pagina {
+    width: 100%;
+    max-width: 520px;
 
-    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.encabezado {
+    width: 100%;
+    text-align: center;
+}
+
+.autor {
+    margin-bottom: 10px;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.titulo-principal {
+    font-family: "Press Start 2P", monospace;
+    font-size: 22px;
+    line-height: 1.5;
+
+    color: rgb(189, 119, 255);
+
+    text-shadow:
+        2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.subtitulo {
+    margin-top: 10px;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+   ============================== */
+
+.contenedor {
+    width: 100%;
+    max-width: 520px;
+
+    padding: 28px;
 
     text-align: center;
 
-    background: white;
+    /* Efecto glass */
+    background: rgba(187, 35, 210, 0.16);
 
-    border-radius: 15px;
+    border: 1px solid rgba(207, 20, 20, 0.35);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 30px rgba(131, 30, 30, 0.421);
 }
 
-button {
-    width: 100%;
 
-    padding: 12px;
-    margin-bottom: 25px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: #6554c0;
-    color: white;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
-}
+/* ==============================
+   TÍTULO
+   ============================== */
 
 h1 {
-    margin-bottom: 20px;
+    margin: 25px 0;
+
+    font-family: "Press Start 2P", monospace;
+
+    font-size: 25px;
+    line-height: 1.5;
+
+    color: rgb(189, 119, 255);
+
+    text-shadow:
+        2px 2px 0 rgba(0, 0, 0, 0.35);
 }
+
+
+/* ==============================
+   BOTÓN
+   ============================== */
+
+.boton-probar {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid rgba(204, 74, 224, 0.4);
+
+    border-radius: 12px;
+
+    background: rgba(200, 33, 33, 0.2);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    color: rgb(206, 66, 134);
+
+    font-family: "Press Start 2P", monospace;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.boton-probar:hover {
+    background: rgba(255, 255, 255, 0.30);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   CONTENEDOR DE LA TABLA
+   ============================== */
+
+.tabla-contenedor {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    /* Segundo nivel de cristal */
+    background: rgba(88, 33, 119, 0.618);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+
+/* ==============================
+   TABLA
+   ============================== */
 
 .tabla {
-    display: grid;
-    gap: 8px;
+    width: 100%;
+
+    border-collapse: collapse;
+
+    color: rgb(163, 211, 237);
 }
 
-.tabla p {
-    padding: 10px;
 
-    background: #ddc4c4;
+/* Encabezados */
 
-    border-radius: 6px;
+.tabla th {
+    padding: 16px 10px;
 
-    font-size: 18px;
+    font-family: "Press Start 2P", monospace;
+
+    font-size: 10px;
+
+    background: rgba(72, 34, 132, 0.547);
+
+    border-bottom: 1px solid rgba(113, 30, 30, 0.534);
 }
 
-/* RESPONSIVE */
 
-@media (max-width: 480px) {
+/* Celdas */
+
+.tabla td {
+    padding: 11px;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    border-bottom: 1px solid rgba(221, 116, 179, 0.423);
+}
+
+
+/* Eliminar borde de la última fila */
+
+.tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Cambio muy sutil al pasar el mouse */
+
+.tabla tbody tr {
+    transition: background 0.2s ease;
+}
+
+.tabla tbody tr:hover {
+    background: rgba(62, 14, 116, 0.624);
+}
+
+
+/* Resultado */
+
+.tabla td:last-child {
+    font-weight: 700;
+}
+
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
 
     .contenedor {
-        width: 95%;
         padding: 20px;
+
+        border-radius: 18px;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 19px;
     }
 
-    .tabla p {
+    .boton-probar {
+        font-size: 11px;
+    }
+
+    .tabla th {
+        font-size: 8px;
+    }
+
+    .tabla td {
+        padding: 10px 6px;
+
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 380px) {
+
+    .contenedor {
+        padding: 15px;
+    }
+
+    h1 {
         font-size: 16px;
+    }
+
+    .tabla td {
+        font-size: 14px;
     }
 }
