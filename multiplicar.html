@@ -21,14 +21,32 @@
     <h2 class="titulo-principal">TABLAS DE MULTIPLICAR</h2>
     <p class="subtitulo">Aprende • Practica • Mejora</p>
 </header>
+<div class="zona-tabla">
 
-    <main class="contenedor">
+    <section class="selector-tabla">
 
+        <label for="numeroTabla">
+            
+            <p>escribe el numero de la tabla que quieres ver y  preciona el boton probar para ver esa tabla</p>
+            <p class="flecha">⬇</p>
+        </label>
+
+        <input
+            type="number"
+            id="numeroTabla"
+            placeholder="Ej: 5"
+            min="1"
+        >
         <button class="boton-probar" onclick="agregarTablas()">
             PROBAR
         </button>
 
+    </section>
+
+    <main class="contenedor">
+        <div id="titulo">
         <h1>Tabla del 3</h1>
+        </div>
 
         <div class="tabla-contenedor">
 
@@ -98,6 +116,7 @@
         </div>
 
     </main>
+</div>
     </div>
     <script src="multiplicar.js"></script>
 

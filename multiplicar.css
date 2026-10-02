@@ -19,8 +19,8 @@ body {
     */
     background-image:
         linear-gradient(
-            rgba(0, 0, 0, 0.10),
-            rgba(0, 0, 0, 0.10)
+            rgba(3, 2, 2, 0.398),
+            rgba(1, 1, 2, 0.426)
         ),
         url("Connection.gif");
 
@@ -34,7 +34,7 @@ body {
 
 .pagina {
     width: 100%;
-    max-width: 520px;
+    max-width: 850px;
 
     display: flex;
     flex-direction: column;
@@ -79,6 +79,109 @@ body {
 
     color: rgba(255, 255, 255, 0.8);
 }
+/* ==============================
+   ZONA TABLA + SELECTOR
+   ============================== */
+
+.zona-tabla {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 148px;
+}
+
+
+/* ==============================
+   SELECTOR DE TABLA
+   ============================== */
+
+.selector-tabla {
+    width: 300px;
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    background: rgba(88, 33, 119, 0.35);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    text-align: left;
+}
+
+
+/* Texto */
+
+.selector-tabla label {
+    font-family: "Press Start 2P", monospace;
+
+    font-size: 11px;
+    line-height: 1.7;
+
+    color: rgb(189, 119, 255);
+}
+.flecha{
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* Caja donde se escribe el número */
+
+.selector-tabla input {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid rgba(204, 74, 224, 0.45);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: rgb(163, 211, 237);
+
+    font-family: "Press Start 2P", monospace;
+    font-size: 14px;
+
+    text-align: center;
+
+    transition:
+        border 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Cuando el usuario hace clic en la caja */
+
+.selector-tabla input:focus {
+    border-color: rgb(189, 119, 255);
+
+    background: rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 0 12px rgba(189, 119, 255, 0.25);
+}
+
+
+/* Color del texto de ejemplo */
+
+.selector-tabla input::placeholder {
+    color: rgba(163, 211, 237, 0.55);
+}
 
 
 /* ==============================
@@ -87,7 +190,7 @@ body {
 
 .contenedor {
     width: 100%;
-    max-width: 520px;
+    max-width: 750px;
 
     padding: 28px;
 
@@ -96,7 +199,7 @@ body {
     /* Efecto glass */
     background: rgba(187, 35, 210, 0.16);
 
-    border: 1px solid rgba(207, 20, 20, 0.35);
+    border: 1px solid rgba(176, 146, 146, 0.759);
 
     border-radius: 22px;
 
@@ -104,7 +207,7 @@ body {
     -webkit-backdrop-filter: blur(10px);
 
     box-shadow:
-        0 8px 30px rgba(131, 30, 30, 0.421);
+        0 8px 30px rgba(123, 11, 11, 0.571);
 }
 
 
@@ -120,10 +223,20 @@ h1 {
     font-size: 25px;
     line-height: 1.5;
 
-    color: rgb(189, 119, 255);
+    color: rgb(164, 71, 250);
 
     text-shadow:
         2px 2px 0 rgba(0, 0, 0, 0.35);
+        padding: 15px;
+         border: 1px solid rgba(207, 36, 36, 0.483);
+
+    border-radius: 12px;
+
+    background: rgba(200, 33, 33, 0.446);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
 }
 
 
@@ -136,7 +249,7 @@ h1 {
 
     padding: 15px;
 
-    border: 1px solid rgba(204, 74, 224, 0.4);
+    border: 1px solid rgba(191, 18, 18, 0.4);
 
     border-radius: 12px;
 
@@ -255,6 +368,18 @@ h1 {
    ============================== */
 
 @media (max-width: 600px) {
+    .zona-tabla {
+    flex-direction: column;
+}
+
+.selector-tabla {
+    width: 100%;
+    text-align: center;
+}
+
+.tabla-contenedor {
+    width: 100%;
+}
 
     body {
         padding: 15px;
